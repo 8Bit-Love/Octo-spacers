@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d3cc7cmb7lj"]
+
+[ext_resource type="PackedScene" uid="uid://y4hjg0cdalaw" path="res://assets/ships/Luma01.glb" id="1_a202f"]
+
+[node name="Node3D" type="Node3D" unique_id=1100137488]
+
+[node name="Luma01" parent="." unique_id=791743521 instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.882687, 7.106977, -0.31785583)
+
+[node name="Camera3D" type="Camera3D" parent="Luma01" unique_id=1666081620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.882687, -7.106977, 0.31785583)
