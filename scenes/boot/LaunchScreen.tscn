@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dkjfcst6ool7n"]
 
+[ext_resource type="Script" uid="uid://cdhgx5koy13e4" path="res://scenes/boot/launch_screen.gd" id="1_abtfn"]
 [ext_resource type="Texture2D" uid="uid://b7aijri3lebdv" path="res://Luma.jpg" id="1_xf816"]
 
 [sub_resource type="Animation" id="Animation_xf816"]
@@ -63,7 +64,7 @@ tracks/0/path = NodePath("LumaLogo:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8666667, 1.2666667, 1.7, 2.1666667, 3.2, 3.6333334, 4.266667, 4.766667, 5.1666665),
+"times": PackedFloat32Array(0, 0.4, 0.8666667, 1.2666667, 1.7, 2.1666667, 3.1, 3.6333334, 4.1, 4.4666667, 4.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.003921569, 0.003921569, 0.003921569, 0.003921569), Color(0.19607843, 0.19607843, 0.19607843, 0.19607843), Color(0.3137255, 0.3137255, 0.3137255, 0.3137255), Color(0.54901963, 0.54901963, 0.54901963, 0.54901963), Color(0.78431374, 0.78431374, 0.78431374, 0.78431374), Color(1, 1, 1, 1), Color(0.78431374, 0.78431374, 0.78431374, 0.78431374), Color(0.54901963, 0.54901963, 0.54901963, 0.54901963), Color(0.3137255, 0.3137255, 0.3137255, 0.3137255), Color(0.19607843, 0.19607843, 0.19607843, 0.19607843), Color(0.003921569, 0.003921569, 0.003921569, 0.003921569)]
@@ -75,7 +76,7 @@ tracks/1/path = NodePath("StudioName:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.4, 5.3),
+"times": PackedFloat32Array(2.1666667, 3.6333334, 4.3),
 "transitions": PackedFloat32Array(1, 3.6050022, 1.3195078),
 "update": 0,
 "values": [Color(0.012617188, 0.012617188, 0.012617188, 1), Color(0.9696924, 0.9696924, 0.9696924, 1), Color(0.011735383, 0.011735383, 0.011735383, 1)]
@@ -87,7 +88,7 @@ tracks/2/path = NodePath("Tagline:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3.1333334, 6.2, 6.5),
+"times": PackedFloat32Array(4.233333, 6.2, 6.5),
 "transitions": PackedFloat32Array(1, 1, 1e-05),
 "update": 0,
 "values": [Color(0.012617188, 0.012617188, 0.012617188, 1), Color(1, 1, 1, 1), Color(0.012617188, 0.012617188, 0.012617188, 1)]
@@ -99,7 +100,7 @@ tracks/3/path = NodePath("year:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3.1333334, 6.233333, 6.5),
+"times": PackedFloat32Array(4.233333, 6.233333, 6.5),
 "transitions": PackedFloat32Array(1, 1, 1e-05),
 "update": 0,
 "values": [Color(0.012617188, 0.012617188, 0.012617188, 1), Color(1, 1, 1, 1), Color(0.012617188, 0.012617188, 0.012617188, 1)]
@@ -111,10 +112,17 @@ _data = {
 &"launch_intro": SubResource("Animation_abtfn")
 }
 
-[node name="LaunchScreen" type="Node2D" unique_id=1825883097]
-position = Vector2(492, 410)
+[node name="LaunchScreen" type="Control" unique_id=914625150]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 504.0
+offset_top = 398.0
+offset_right = 504.0
+offset_bottom = 398.0
+script = ExtResource("1_abtfn")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1502488542]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -130,6 +138,7 @@ color = Color(3.0637257e-05, 1.9148285e-05, 0.00010123012, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="StudioName" type="Label" parent="." unique_id=157353245]
+layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -144,6 +153,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LumaLogo" type="TextureRect" parent="." unique_id=157397095]
 modulate = Color(0.003921569, 0.003921569, 0.003921569, 0)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -161,6 +171,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Tagline" type="Label" parent="." unique_id=216880361]
+layout_mode = 0
 offset_left = -94.0
 offset_top = 49.0
 offset_right = 235.0
@@ -170,6 +181,7 @@ text = "A SMALL STUDIO. BIG DREAMS."
 metadata/_edit_use_anchors_ = true
 
 [node name="year" type="Label" parent="." unique_id=1923234834]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 96.0
 offset_right = 93.0
