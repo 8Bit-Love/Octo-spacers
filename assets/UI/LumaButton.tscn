@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://mtqlnsu7hevk"]
 
-[node name="LumaButton" type="Node2D" unique_id=627725960]
+[node name="LumaButton" type="TextureButton" unique_id=851697769]
+offset_right = 40.0
+offset_bottom = 40.0
