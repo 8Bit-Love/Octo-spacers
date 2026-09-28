@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://mtqlnsu7hevk"]
+[gd_scene format=3 uid="uid://b8omvd5qx3syb"]
 
 [node name="LumaButton" type="TextureButton" unique_id=851697769]
 offset_right = 40.0
