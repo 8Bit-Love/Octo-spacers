@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://brxvy2hi10jjl" path="res://assets/music/music1.mp3" id="3_d43yb"]
 [ext_resource type="Texture2D" uid="uid://cxk4cn2lbge2c" path="res://assets/UI/menu.png" id="4_i421m"]
 [ext_resource type="PackedScene" uid="uid://c0ammfuh28f6q" path="res://assets/UI/PlayMenu/PlayMenu.tscn" id="5_d43yb"]
+[ext_resource type="PackedScene" uid="uid://cgc785141tmce" path="res://assets/UI/CreditsMenu/CreditsMenu.tscn" id="6_1fr4q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i421m"]
 atlas = ExtResource("4_i421m")
@@ -94,3 +95,9 @@ offset_top = 614.0
 offset_right = 1135.0
 offset_bottom = 637.0
 text = "2026 <3"
+
+[node name="CreditsMenu" parent="." unique_id=1089502573 instance=ExtResource("6_1fr4q")]
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 1152.0
+offset_bottom = 651.0

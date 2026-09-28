@@ -5,6 +5,8 @@ extends Node2D
 @onready var menu_music: AudioStreamPlayer2D = $MenuMusic
 @onready var play_button: TextureButton = $Play
 @onready var play_menu: Control = $PlayMenu
+@onready var credits_button: TextureButton = $Credits
+@onready var credits_menu: Control = $CreditsMenu
 
 
 func _ready() -> void:
@@ -15,6 +17,7 @@ func _ready() -> void:
 	menu_music.play()
 
 	play_button.pressed.connect(_on_play_pressed)
+	credits_button.pressed.connect(_on_credits_pressed)
 
 	await get_tree().create_timer(0.15).timeout
 	_start_menu_reveal()
@@ -43,3 +46,8 @@ func _start_menu_reveal() -> void:
 func _on_play_pressed() -> void:
 	print("PLAY BUTTON PRESSED")
 	play_menu.open_window()
+
+
+func _on_credits_pressed() -> void:
+	print("CREDITS BUTTON PRESSED")
+	credits_menu.open_window()

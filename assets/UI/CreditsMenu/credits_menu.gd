@@ -1,37 +1,28 @@
 extends Control
 
 
-@onready var close_button = find_child("Close", true, false)
-@onready var new_game_button = find_child("NewGame", true, false)
-@onready var continue_button = find_child("Continue", true, false)
+@onready var close_button: TextureButton = $Background/Close
 
 var is_animating := false
-
 var click_sound: AudioStreamPlayer
 
 
 func _ready() -> void:
 	visible = false
 
-	# Create the click sound player automatically
+	# Create click sound player
 	click_sound = AudioStreamPlayer.new()
 	click_sound.stream = load("res://assets/sfx/clic.mp3")
 	add_child(click_sound)
 
-	print("=== PLAY MENU ===")
+	print("=== CREDITS MENU ===")
 	print("Close: ", close_button)
-	print("NewGame: ", new_game_button)
-	print("Continue: ", continue_button)
 	print("Click sound: ", click_sound.stream)
 
 	if close_button:
 		close_button.pressed.connect(_on_close_pressed)
-
-	if new_game_button:
-		new_game_button.pressed.connect(_on_new_game_pressed)
-
-	if continue_button:
-		continue_button.pressed.connect(_on_continue_pressed)
+	else:
+		print("❌ CLOSE BUTTON NOT FOUND!")
 
 
 func _play_click() -> void:
@@ -43,7 +34,7 @@ func open_window() -> void:
 	if is_animating:
 		return
 
-	print("🔥 PLAY MENU OPEN CALLED")
+	print("🔥 CREDITS MENU OPEN CALLED")
 
 	_play_click()
 
@@ -85,7 +76,7 @@ func _on_close_pressed() -> void:
 	if is_animating:
 		return
 
-	print("🔥 CLOSE PRESSED")
+	print("🔥 CREDITS CLOSE PRESSED")
 
 	_play_click()
 
@@ -111,13 +102,3 @@ func _on_close_pressed() -> void:
 
 	visible = false
 	is_animating = false
-
-
-func _on_new_game_pressed() -> void:
-	print("🔥 NEW GAME PRESSED")
-	_play_click()
-
-
-func _on_continue_pressed() -> void:
-	print("🔥 CONTINUE PRESSED")
-	_play_click()

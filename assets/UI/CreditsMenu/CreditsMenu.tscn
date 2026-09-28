@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cgc785141tmce"]
+
+[ext_resource type="Texture2D" uid="uid://cxk4cn2lbge2c" path="res://assets/UI/menu.png" id="1_menu"]
+[ext_resource type="Script" uid="uid://btijcjfcdlald" path="res://assets/UI/CreditsMenu/credits_menu.gd" id="1_u1qrb"]
+
+[sub_resource type="AtlasTexture" id="CreditsBackground"]
+atlas = ExtResource("1_menu")
+region = Rect2(422.4004, 49.927505, 605.9929, 480.30865)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b7f3"]
+atlas = ExtResource("1_menu")
+region = Rect2(1140.0548, 897.7427, 68.984375, 64.20331)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5me6e"]
+atlas = ExtResource("1_menu")
+region = Rect2(1066.3422, 899.70526, 67.172485, 62.092163)
+
+[node name="CreditsMenu" type="Control" unique_id=1089502573]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1147.0
+offset_bottom = 645.0
+script = ExtResource("1_u1qrb")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2091303755]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 29.0
+offset_right = 950.0
+offset_bottom = 575.0
+texture = SubResource("CreditsBackground")
+expand_mode = 1
+
+[node name="Close" type="TextureButton" parent="Background" unique_id=1640647697]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.056
+offset_left = 595.0
+offset_top = 47.0
+offset_right = 623.016
+offset_bottom = 111.0
+texture_normal = SubResource("AtlasTexture_2b7f3")
+texture_pressed = SubResource("AtlasTexture_5me6e")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Background" unique_id=1819967195]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 130.0
+offset_right = 630.0
+offset_bottom = 435.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Content" type="Control" parent="Background/ScrollContainer" unique_id=8180447]
+custom_minimum_size = Vector2(500, 900)
+layout_mode = 2
+
+[node name="CreditsText" type="Label" parent="Background/ScrollContainer/Content" unique_id=1042574078]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 16.0
+offset_right = 230.0
+offset_bottom = 793.0
+text = "OCTO SPACERS
+
+A Luma Games Production
+
+────────────────
+
+GAME
+Octo Spacers
+
+Developed by
+Luma Games
+
+Programming
+Flouz
+
+Art & 3D
+Flouz
+
+Music & Sound
+Flouz
+Loveli lori
+
+Engine
+Godot Engine
+
+────────────────
+
+Thank you for playing!
+
+© 2026 Luma Games"
+horizontal_alignment = 1
+vertical_alignment = 1
